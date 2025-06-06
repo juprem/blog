@@ -2,8 +2,6 @@ import { createFileRoute, FileRoutesByPath } from '@tanstack/react-router';
 import { ArticleCard } from '../components/ArticleCard/ArticleCard.tsx';
 import dayjs, { Dayjs } from 'dayjs';
 import RandomImage from '../assets/random_image.jpg';
-import { useState } from 'react';
-import { Button } from '@/components/ui/button.tsx';
 
 export const Route = createFileRoute('/')({
     component: Index,
@@ -54,10 +52,8 @@ const articles: {
 ];
 
 function Index() {
-    const [counter, setCounter] = useState(0);
     return (
         <div className="p-2 grid max-lg:grid-cols-1 grid-cols-2 2xl:grid-cols-3 gap-4 justify-items-center">
-            <Button onClick={() => setCounter(counter + 1)}>T + {counter}</Button>
             {articles.map((article) => {
                 const { title, date, img, link, readingTime } = article;
 
